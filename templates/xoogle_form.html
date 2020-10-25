@@ -1,0 +1,10 @@
+<form action="<{$SCRIPT_NAME}>" method="get">
+<{$SEARCH_LABEL}>	<input type="text" name="query" value="<{$post.query}>">
+	<{if $sl_select }>
+		<{$sl_select}>
+	<{/if}>
+	<{if $lr_select }>
+		<{$lr_select}>
+	<{/if}>
+	<input type="submit" value="<{$SEARCH_BUTTON}>">
+</form>

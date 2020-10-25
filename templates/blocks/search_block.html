@@ -1,0 +1,12 @@
+<form action="<{$xoops_url}>/modules/xoogle/index.php" method="get">
+<input type="text" name="query" value="<{$block.query}>"> 
+	<{if $block.sl_select }>
+		<br><{$block.sl_select}>
+	<{/if}>
+	<{if $block.lr_select }>
+		<br><{$block.lr_select}>
+	<{/if}>
+<br>
+  <input type="submit" name="Submit" value="<{$block.SEARCH_BUTTON}>">
+<p><a href="<{$xoops_url}>/search.php"><{$block.ADVANCED_SEARCH}></a></p>
+</form>

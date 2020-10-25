@@ -1,0 +1,30 @@
+<h2><{$PAGE_TITLE}></h2>
+<p><{$PAGE_DESC}></p>
+
+<{include file="db:xoogle_form.html"}>
+
+<{if $xoogle_results.soap_error != '' }>
+ <b><{$xoogle_results.soap_error }></b>
+<{else}>
+<{if $xoogle_results != ''}>
+  <{include file="db:xoogle_paginate.html"}>
+<{/if}>
+<{if $xoogle_error != ''}>
+  <p><{$xoogle_error}></p>
+<{/if}>
+
+<{foreach item=result from=$xoogle_results.results.resultElements}>
+<p class="<{cycle values='odd,even'}>"><b><a href="<{$result.URL}>"><{$result.title}></a></b> <br>
+<{$result.snippet}> <br>
+<{$result.URL}></p>
+<{/foreach}>
+
+<{if $xoogle_results != ''}>
+  <{include file="db:xoogle_paginate.html"}>
+<{/if}>
+<br>
+<{if $xoogle_results != ''}>
+  <{include file="db:xoogle_form.html"}>
+<{/if}>
+
+<{/if}>
